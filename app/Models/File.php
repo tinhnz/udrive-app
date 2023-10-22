@@ -11,4 +11,8 @@ use Kalnoy\Nestedset\NodeTrait;
 class File extends Model
 {
     use HasFactory, HasCreatorAndUpdater, NodeTrait, SoftDeletes;
+
+    public function isOwnedBy($userId): bool {
+        return $this->created_by == $userId;
+    }
 }

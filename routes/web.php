@@ -30,6 +30,7 @@ Route::controller(FileController::class)
     ->middleware(['auth'])
     ->group(function() {
         Route::get('my-files', 'myFiles')->name('myFiles');
+        Route::post('folder/create', 'createFolder')->name('folder.create');
     });
 
 Route::middleware('auth')->group(function () {
